@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Contraster</string>
+    <string name="label_lorem_ipsum">Lorem ipsum dolor sit amet</string>
+    <string name="label_background">Background</string>
+    <string name="label_text">Texto</string>
+    <string name="label_object">Objeto</string>
+    <string name="label_brightness">Claridade</string>
+    <string name="label_alpha">Opacidade</string>
+    <string name="label_target">Alvo</string>
+    <string name="label_hue">Tonalidade</string>
+    <string name="label_saturation">Saturação</string>
 </resources>
