@@ -13,7 +13,7 @@
     <color name="onBackground">#575757</color>
 
 
-    <color name="defaultBackgroundColor">#246EE9</color>
-    <color name="defaultTextColor">#FDFEFF</color>
+    <color name="defaultBackgroundColor">#310aff</color>
+    <color name="defaultTextColor">#a1ff0a</color>
 
 </resources>

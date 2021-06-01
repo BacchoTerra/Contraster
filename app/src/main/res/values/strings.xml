@@ -16,4 +16,6 @@
     <string name="label_hex_rule_2">- Não use valores hexadecimais com opacidade.</string>
     <string name="error_hex_value">Código hex inválido</string>
     <string name="error_invalid_color">Essa não é uma cor válida</string>
+    <string name="label_lorem_ipsum_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="label_ratio_calculation">Ratio calculation</string>
 </resources>

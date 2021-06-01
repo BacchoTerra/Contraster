@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 
@@ -62,8 +61,8 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,Set
         spannableString = when (ratio) {
 
             in 7.0..21.0 -> SpannableString("Aa ${String.format("%.2f", ratio)} AAA")
-            in 4.5..6.9 -> SpannableString("Aa ${String.format("%.2f", ratio)} AA")
-            in 3.0..4.49 -> SpannableString("Aa ${String.format("%.2f", ratio)} AA+")
+            in 4.5..6.9999 -> SpannableString("Aa ${String.format("%.2f", ratio)} AA")
+            in 3.0..4.49999 -> SpannableString("Aa ${String.format("%.2f", ratio)} AA+")
             else -> SpannableString("Aa ${String.format("%.2f", ratio)} FAIL")
 
         }

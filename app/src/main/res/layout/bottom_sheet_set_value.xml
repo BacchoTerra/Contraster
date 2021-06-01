@@ -21,9 +21,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/bottom_sheet_set_value_editValue"
             android:layout_width="match_parent"
+            android:text="#"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="@string/hint_hex_color" />
+            android:hint="@string/hint_hex_color"
+            tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

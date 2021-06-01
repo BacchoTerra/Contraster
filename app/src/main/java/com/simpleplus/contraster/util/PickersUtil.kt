@@ -21,12 +21,14 @@ class PickersUtil(
    context: Context
 ) : ColorSeekBar.OnColorPickListener<ColorSeekBar<IntegerHSLColor>,IntegerHSLColor>{
 
-    private val TAG = "Porsche"
+    companion object {
+        private const val TAG = "Porsche"
+    }
 
     //Pickers and picker group
-    var huePicker: HSLColorPickerSeekBar = activityMainBinding.activityMainHuePicker
-    var brightnessPicker: HSLColorPickerSeekBar = activityMainBinding.activityMainBrightnessPicker
-    var saturationPicker: HSLColorPickerSeekBar = activityMainBinding.activityMainSaturationPicker
+    private var huePicker: HSLColorPickerSeekBar = activityMainBinding.activityMainHuePicker
+    private var brightnessPicker: HSLColorPickerSeekBar = activityMainBinding.activityMainBrightnessPicker
+    private var saturationPicker: HSLColorPickerSeekBar = activityMainBinding.activityMainSaturationPicker
     private val pickerGroup = PickerGroup<IntegerHSLColor>().apply {
         this.registerPickers(huePicker, brightnessPicker, saturationPicker)
     }
@@ -49,7 +51,7 @@ class PickersUtil(
 
     private fun handleButtonGroupSelection() {
 
-      btnGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+      btnGroup.addOnButtonCheckedListener { _, _, _ ->
 
             setGroupColorWithoutFuckingEverything()
       }
@@ -60,12 +62,10 @@ class PickersUtil(
         pickerGroup.removeListener(this)
 
         if (btnBackground.isChecked) {
-            Log.i(TAG, "handleButtonGroupSelection: Background")
 
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
             handleHexColorDisplay(selectedBackgroundColor)
         }else{
-            Log.i(TAG, "handleButtonGroupSelection: text")
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
             handleHexColorDisplay(selectedForegroundColor)
         }

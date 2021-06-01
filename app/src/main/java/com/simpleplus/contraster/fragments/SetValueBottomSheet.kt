@@ -3,7 +3,6 @@ package com.simpleplus.contraster.fragments
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +12,13 @@ import com.simpleplus.contraster.R
 import com.simpleplus.contraster.activities.MainActivity
 import com.simpleplus.contraster.databinding.BottomSheetSetValueBinding
 import java.lang.Exception
-import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class SetValueBottomSheet (private var listener : OnColorValueSetListener ): BottomSheetDialogFragment() {
 
-    private val TAG = "Porsche"
+    companion object {
+        private const val TAG = "Porsche"
+    }
 
     //layout components
     private val binder by lazy {
