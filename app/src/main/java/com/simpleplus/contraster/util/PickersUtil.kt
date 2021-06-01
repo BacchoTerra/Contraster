@@ -38,7 +38,6 @@ class PickersUtil(
     //Layout components
     private val btnGroup = activityMainBinding.activityMainMaterialBtnGroup
     private val btnBackground = btnGroup[0] as MaterialButton
-    private val btnText = btnGroup[1] as MaterialButton
 
     init {
         pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
@@ -52,26 +51,45 @@ class PickersUtil(
 
       btnGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
 
-          pickerGroup.removeListener(this)
-
-          if (btnBackground.isChecked) {
-              Log.i(TAG, "handleButtonGroupSelection: Background")
-              pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
-              handleHexColorDisplay(selectedBackgroundColor)
-          }else{
-              Log.i(TAG, "handleButtonGroupSelection: text")
-              pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
-              handleHexColorDisplay(selectedForegroundColor)
-          }
-
-          pickerGroup.addListener(this)
+            setGroupColorWithoutFuckingEverything()
       }
+
+    }
+
+    private fun setGroupColorWithoutFuckingEverything() {
+        pickerGroup.removeListener(this)
+
+        if (btnBackground.isChecked) {
+            Log.i(TAG, "handleButtonGroupSelection: Background")
+
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
+            handleHexColorDisplay(selectedBackgroundColor)
+        }else{
+            Log.i(TAG, "handleButtonGroupSelection: text")
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
+            handleHexColorDisplay(selectedForegroundColor)
+        }
+
+        pickerGroup.addListener(this)
+
 
     }
 
     private fun handleHexColorDisplay(selectedColor:Int) {
 
         activityMainBinding.activityMainTxtHexColor.text = String.format("#%06X", (0xFFFFFF and selectedColor))
+
+    }
+
+    fun updateGroupWithInputColor(color:Int){
+
+        if (btnBackground.isChecked) {
+            selectedBackgroundColor = color
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
+        }else {
+            selectedForegroundColor = color
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
+        }
 
     }
 

@@ -10,4 +10,10 @@
     <string name="label_hue">Tonalidade</string>
     <string name="label_saturation">Saturação</string>
     <string name="label_initial_aa_ratio">AA</string>
+    <string name="hint_hex_color">Hex color</string>
+    <string name="cd_confirm_hex_value">Confirmar valor HEX</string>
+    <string name="label_hex_rule_1">- Use o formato de 6 dígitos precedidos por \"#\".</string>
+    <string name="label_hex_rule_2">- Não use valores hexadecimais com opacidade.</string>
+    <string name="error_hex_value">Código hex inválido</string>
+    <string name="error_invalid_color">Essa não é uma cor válida</string>
 </resources>
