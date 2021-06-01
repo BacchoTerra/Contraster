@@ -9,4 +9,5 @@
     <string name="label_target">Alvo</string>
     <string name="label_hue">Tonalidade</string>
     <string name="label_saturation">Saturação</string>
+    <string name="label_initial_aa_ratio">AA</string>
 </resources>

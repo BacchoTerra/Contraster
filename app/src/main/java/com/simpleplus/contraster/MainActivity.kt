@@ -1,10 +1,12 @@
 package com.simpleplus.contraster
 
-import android.graphics.Color
+import android.content.Context
 import android.os.Bundle
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
+import androidx.core.view.get
 import codes.side.andcolorpicker.converter.setFromColorInt
 import codes.side.andcolorpicker.model.IntegerHSLColor
 
@@ -20,9 +22,6 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener {
     private val binder by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    private val btnGroup by lazy {
-        binder.activityMainMaterialBtnGroup
-    }
 
     //Utils
     private lateinit var pickersUtil: PickersUtil
@@ -31,12 +30,11 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(binder.root)
         pickersUtil = PickersUtil(binder, this,this)
-        btnGroup.check(binder.activityMainBtnBackground.id)
-        handleButtonGroup()
+        binder.activityMainTargetTxt3.text = calculateContrastRatio(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
 
     }
 
-    private fun paintLayout(color: Int) {
+    private fun paintSelectedLayout(color: Int) {
 
         when (binder.activityMainMaterialBtnGroup.checkedButtonId) {
             binder.activityMainBtnBackground.id -> binder.root.setBackgroundColor(color)
@@ -49,49 +47,27 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener {
 
     }
 
-    private fun handleButtonGroup() {
+    private fun calculateContrastRatio(backgroundColor: Int, foregroundColor: Int) : String{
 
-        btnGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            when (checkedId) {
+        val ratio = ColorUtils.calculateContrast(foregroundColor,backgroundColor)
 
-                binder.activityMainBtnBackground.id -> {
 
-                    pickersUtil.pickerGroup.setColor(IntegerHSLColor().also {
-                        it.setFromColorInt(
-                            pickersUtil.selectedBackgroundColor
-                        )
-                    })
+        return when(ratio) {
 
-                }
-
-                else -> pickersUtil.pickerGroup.setColor(IntegerHSLColor().also {
-                    it.setFromColorInt(
-                        pickersUtil.selectedForegroundColor
-                    )
-                })
-
-            }
-
-        }
-    }
-
-    private fun calculateContrastRatio() : String{
-
-        return when(ColorUtils.calculateContrast(pickersUtil.selectedForegroundColor,pickersUtil.selectedBackgroundColor)) {
-
-            7.0 -> "AAA"
-            in 4.5..6.9 -> "AA"
-            in 3.0..4.4 -> "AA+"
-            else -> "FAIL"
+            in 7.0..21.0 -> "$ratio AAA"
+            in 4.5..6.9 -> "$ratio AA"
+            in 3.0..4.49 -> "$ratio AA+"
+            else -> "$ratio FAIL"
 
         }
 
+    }
 
+    override fun onColorChanged(currentColorInt: Int, backgroundColor: Int, foregroundColor: Int) {
+        paintSelectedLayout(currentColorInt)
+        binder.activityMainTargetTxt3.text = calculateContrastRatio(backgroundColor,foregroundColor)
 
     }
 
-    override fun onColorChanged(colorInt: Int) {
-        paintLayout(colorInt)
-    }
 
 }
