@@ -187,7 +187,7 @@
 
         -->
     <TextView
-        android:id="@+id/activity_main_targetTxt1"
+        android:id="@+id/activity_main_txtAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -199,66 +199,67 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/activity_main_targetTxt2"
+        android:id="@+id/activity_main_txtContrastRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="Aa 5.00 AA"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_txtAppName"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtAppName" />
+
+    <TextView
+        android:id="@+id/activity_main_txtMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/roboto"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:letterSpacing="0.16"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         android:textColor="@color/defaultTextColor"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/activity_main_targetTxt1"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_targetTxt1" />
+        app:layout_constraintStart_toStartOf="@+id/activity_main_txtContrastRatio"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtContrastRatio" />
 
     <TextView
-        android:id="@+id/activity_main_targetTxt3"
+        android:id="@+id/activity_main_txtInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/roboto"
         android:text="Ratio calculation"
         android:textColor="@color/defaultTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_targetTxt2" />
+        app:layout_constraintStart_toStartOf="@+id/activity_main_txtMessage"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtMessage" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/shape_top_rounded_view_group"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_targetTxt3">
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtInformation">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/label_target"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textColor="@color/onBackground"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/activity_main_materialBtnGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:selectionRequired="true"
                 app:singleSelection="true">
 
@@ -358,10 +359,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 app:hslMode="saturation"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
