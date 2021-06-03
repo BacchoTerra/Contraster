@@ -7,8 +7,6 @@
     android:background="@color/defaultBackgroundColor"
     tools:context=".activities.MainActivity">
 
-
-
     <TextView
         android:id="@+id/activity_main_txtAppName"
         android:layout_width="wrap_content"
@@ -17,6 +15,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/app_name"
+        android:textSize="22sp"
         android:textColor="@color/defaultTextColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,26 +24,26 @@
         android:id="@+id/activity_main_txtContrastRatio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto"
-        tools:text="Aa 5.00 AA"
         android:textColor="@color/defaultTextColor"
-        android:textSize="22sp"
+        android:textSize="52sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtAppName"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtAppName" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtAppName"
+        tools:text="Aa 5.00 AA" />
 
     <TextView
         android:id="@+id/activity_main_txtMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:letterSpacing="0.16"
         android:text="@string/label_lorem_ipsum_content"
         android:textColor="@color/defaultTextColor"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtContrastRatio"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_txtContrastRatio" />
@@ -53,17 +52,18 @@
         android:id="@+id/activity_main_txtInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/roboto"
         android:text="@string/label_ratio_calculation"
         android:textColor="@color/defaultTextColor"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtMessage"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_txtMessage" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/shape_top_rounded_view_group"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +111,12 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/shape_text_view_stroked"
                 android:paddingHorizontal="16dp"
-                tools:text="#FFFFFF"
                 android:textColor="@color/onBackground"
                 app:layout_constraintBottom_toBottomOf="@+id/activity_main_materialBtnGroup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/activity_main_materialBtnGroup"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView7"
