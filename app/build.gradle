@@ -11,8 +11,8 @@ android {
         applicationId "com.simpleplus.contraster"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -52,4 +52,7 @@ dependencies {
 
     //https://github.com/side-codes/andColorPicker
     implementation "codes.side:andcolorpicker:0.6.2"
+
+    //https://developers.google.com/admob/android/quick-start
+    implementation 'com.google.android.gms:play-services-ads:20.1.0'
 }

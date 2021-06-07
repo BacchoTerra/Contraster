@@ -12,7 +12,7 @@
     <string name="label_initial_aa_ratio">AA</string>
     <string name="hint_hex_color">Hex color</string>
     <string name="cd_confirm_hex_value">Confirm HEX value</string>
-    <string name="label_hex_rule_1">- Use the 6-digit format preceded by \ "# \". </string>
+    <string name="label_hex_rule_1">- Use the 6-digit format preceded by \"# \". </string>
     <string name="label_hex_rule_2">- Do not use hexadecimal values with opacity.</string>
     <string name="error_hex_value">Invalid hex coed</string>
     <string name="error_invalid_color">This is not a valid color</string>
