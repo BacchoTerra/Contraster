@@ -198,7 +198,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="32dp"
                 app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-8194589944395897/9122212676"
+                app:adUnitId="ca-app-pub-3940256099942544/6300978111"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,6 +207,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <!--TODO: readicionar o ad que nao é teste app:adUnitId="ca-app-pub-8194589944395897/9122212676"-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
