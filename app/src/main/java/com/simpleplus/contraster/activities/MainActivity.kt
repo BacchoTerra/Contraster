@@ -8,8 +8,10 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
+import android.util.Log
 import android.view.MenuItem
 import android.widget.PopupMenu
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +31,7 @@ import com.simpleplus.contraster.util.PickersUtil
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
 
 class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
-    SetValueBottomSheet.OnColorValueSetListener,PopupMenu.OnMenuItemClickListener{
+    SetValueBottomSheet.OnColorValueSetListener, PopupMenu.OnMenuItemClickListener {
     companion object {
         private const val TAG = "Porsche"
         const val BTM_SHEET_BUNDLE_KEY = "com.simpleplus.contraster.BTMSHEET_KEY"
@@ -52,6 +54,20 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     //String components
     private lateinit var spannableString: SpannableString
 
+    //Activity launch components
+    private val palettesActivityLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+            if (it.resultCode == RESULT_OK) {
+                val background = it.data?.extras?.getInt(PalettesActivity.KEY_FOR_BACKGROUND)!!
+                val foreground = it.data?.extras?.getInt(PalettesActivity.KEY_FOR_FOREGROUND)!!
+                pickersUtil.updateGroupWithSelectedPalette(background, foreground)
+                paintLayoutWithSelectedPalette(background,foreground)
+
+            }
+
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binder.root)
@@ -66,7 +82,6 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         binder.activityMainImageMenu.setOnClickListener {
             showPopUpMenu()
         }
-
 
 
     }
@@ -89,9 +104,17 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialogBinder.dialogSavePaletteBtnSave.setOnClickListener {
-            viewModel.insert(MyPalette(dialogBinder.dialogSavePaletteEditName.text.toString(),ratioLabel,pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor))
+            viewModel.insert(
+                MyPalette(
+                    dialogBinder.dialogSavePaletteEditName.text.toString(),
+                    ratioLabel,
+                    pickersUtil.selectedBackgroundColor,
+                    pickersUtil.selectedForegroundColor
+                )
+            )
             alertDialog.dismiss()
-            Snackbar.make(binder.root,R.string.snackBar_palette_saved,Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(binder.root, R.string.snackBar_palette_saved, Snackbar.LENGTH_SHORT)
+                .show()
         }
 
         dialogBinder.dialogSavePaletteTxtCancel.setOnClickListener {
@@ -104,9 +127,9 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     private fun showPopUpMenu() {
 
-        val popupMenu = PopupMenu(this,binder.activityMainImageMenu)
+        val popupMenu = PopupMenu(this, binder.activityMainImageMenu)
 
-        popupMenu.menuInflater.inflate(R.menu.menu_main_activity_popup,popupMenu.menu)
+        popupMenu.menuInflater.inflate(R.menu.menu_main_activity_popup, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener(this)
 
         popupMenu.show()
@@ -122,9 +145,27 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                 binder.activityMainTxtContrastRatio.setTextColor(color)
                 binder.activityMainTxtMessage.setTextColor(color)
                 binder.activityMainTxtInformation.setTextColor(color)
-                ImageViewCompat.setImageTintList(binder.activityMainImageMenu, ColorStateList.valueOf(color))
+                ImageViewCompat.setImageTintList(
+                    binder.activityMainImageMenu,
+                    ColorStateList.valueOf(color)
+                )
             }
         }
+
+    }
+
+    private fun paintLayoutWithSelectedPalette(backgroundColor: Int, foregroundColor: Int) {
+
+        binder.root.setBackgroundColor(backgroundColor)
+        binder.activityMainTxtAppName.setTextColor(foregroundColor)
+        binder.activityMainTxtContrastRatio.setTextColor(foregroundColor)
+        binder.activityMainTxtMessage.setTextColor(foregroundColor)
+        binder.activityMainTxtInformation.setTextColor(foregroundColor)
+        ImageViewCompat.setImageTintList(
+            binder.activityMainImageMenu,
+            ColorStateList.valueOf(foregroundColor)
+        )
+
 
     }
 
@@ -135,16 +176,22 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         spannableString = when (ratio) {
 
             in 7.0..21.0 -> {
-                SpannableString("Aa ${String.format("%.2f", ratio)} AAA").also { ratioLabel = "AAA" }
+                SpannableString("Aa ${String.format("%.2f", ratio)} AAA").also {
+                    ratioLabel = "AAA"
+                }
             }
             in 4.5..6.9999 -> {
                 SpannableString("Aa ${String.format("%.2f", ratio)} AA").also { ratioLabel = "AA" }
             }
             in 3.0..4.49999 -> {
-                SpannableString("Aa ${String.format("%.2f", ratio)} AA+").also { ratioLabel = "AA+" }
+                SpannableString("Aa ${String.format("%.2f", ratio)} AA+").also {
+                    ratioLabel = "AA+"
+                }
             }
             else -> {
-                SpannableString("Aa ${String.format("%.2f", ratio)} FAIL").also { ratioLabel = "FAIL" }
+                SpannableString("Aa ${String.format("%.2f", ratio)} FAIL").also {
+                    ratioLabel = "FAIL"
+                }
             }
 
         }
@@ -189,6 +236,11 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     override fun onColorValueSet(colorInt: Int) {
         pickersUtil.updateGroupChosenColor(colorInt)
+        Log.i(TAG, "Color int recovered from listener: $colorInt")
+        Log.i(
+            TAG,
+            "Color hex recovered from listener: ${String.format("#%06X", 0xFFFFFF and colorInt)}"
+        )
     }
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
@@ -197,7 +249,9 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
             R.id.menu_main_activity_popup_save -> showPaletteSavingDialog()
 
-            R.id.menu_main_activity_popup_see_palettes -> startActivity(Intent(this,PalettesActivity::class.java))
+            R.id.menu_main_activity_popup_see_palettes -> {
+                palettesActivityLauncher.launch(Intent(this, PalettesActivity::class.java))
+            }
 
         }
 

@@ -1,5 +1,6 @@
 package com.simpleplus.contraster.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,11 @@ import com.simpleplus.contraster.databinding.ActivityPalettesBinding
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
 
 class PalettesActivity : AppCompatActivity() {
+
+    companion object {
+        const val KEY_FOR_BACKGROUND = "com.simpleplus.dev.BACKGROUND_KEY"
+        const val KEY_FOR_FOREGROUND = "com.simpleplus.dev.FOREGROUND_KEY"
+    }
 
     //Layout components
     private val binder by lazy {
@@ -67,6 +73,14 @@ class PalettesActivity : AppCompatActivity() {
             adapter.submitList(it)
 
         }
+
+    }
+
+    fun sendPaletteToEdition(backgroundColor:Int,foregroundColor:Int) {
+
+        setResult(RESULT_OK,Intent().putExtra(KEY_FOR_BACKGROUND,backgroundColor).putExtra(
+            KEY_FOR_FOREGROUND,foregroundColor))
+        finish()
 
     }
 }

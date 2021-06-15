@@ -3,6 +3,7 @@ package com.simpleplus.contraster.fragments
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -87,6 +88,8 @@ class SetValueBottomSheet (private var listener : OnColorValueSetListener ): Bot
     private fun sendColorBack(hexValues: String) {
 
         val colorInt = Color.parseColor(hexValues)
+        Log.i(TAG, "Color int inside bottom sheet: $colorInt")
+        Log.i(TAG, "Color hex inside bottom sheet: ${String.format("#%06X", 0xFFFFFF and colorInt)}")
         listener.onColorValueSet(colorInt)
         dismiss()
     }

@@ -1,11 +1,13 @@
 package com.simpleplus.contraster.util
 
 import android.content.Context
+import android.graphics.Color
 import android.util.Log
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.get
 import codes.side.andcolorpicker.converter.setFromColorInt
 import codes.side.andcolorpicker.converter.toColorInt
+import codes.side.andcolorpicker.converter.toPureHueColorInt
 import codes.side.andcolorpicker.group.PickerGroup
 import codes.side.andcolorpicker.group.registerPickers
 import codes.side.andcolorpicker.hsl.HSLColorPickerSeekBar
@@ -14,6 +16,7 @@ import codes.side.andcolorpicker.view.picker.ColorSeekBar
 import com.google.android.material.button.MaterialButton
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.databinding.ActivityMainBinding
+import com.simpleplus.contraster.fragments.SetValueBottomSheet
 
 class PickersUtil(
    private  val activityMainBinding: ActivityMainBinding,
@@ -76,7 +79,6 @@ class PickersUtil(
     }
 
     private fun handleHexColorDisplay(selectedColor:Int) {
-
         activityMainBinding.activityMainTxtHexColor.text = String.format("#%06X", (0xFFFFFF and selectedColor))
 
     }
@@ -85,11 +87,26 @@ class PickersUtil(
 
         if (btnBackground.isChecked) {
             selectedBackgroundColor = color
+            Log.i(TAG, "Color int inside PickerUtil: $color")
+            Log.i(TAG, "Color hex inside PickerUtil: ${String.format("#%06X", 0xFFFFFF and color)}")
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
+
         }else {
             selectedForegroundColor = color
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
         }
+    }
+
+    fun updateGroupWithSelectedPalette(backgroundColor: Int,foregroundColor: Int) {
+        selectedBackgroundColor = backgroundColor
+        selectedForegroundColor = foregroundColor
+
+        if (btnBackground.isChecked) {
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
+        }else {
+            pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
+        }
+
     }
 
     override fun onColorChanged(
@@ -97,6 +114,9 @@ class PickersUtil(
         color: IntegerHSLColor,
         value: Int
     ) {
+
+        Log.i(TAG, "Color int inside color group: ${color.toPureHueColorInt()}")
+        Log.i(TAG, "Color hex inside color group: ${String.format("#%06X", 0xFFFFFF and color.toColorInt())}")
 
         if (btnBackground.isChecked) {
             selectedBackgroundColor = color.toColorInt()
