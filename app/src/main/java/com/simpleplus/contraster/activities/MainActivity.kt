@@ -105,6 +105,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     private fun showPopUpMenu() {
 
         val popupMenu = PopupMenu(this,binder.activityMainImageMenu)
+
         popupMenu.menuInflater.inflate(R.menu.menu_main_activity_popup,popupMenu.menu)
         popupMenu.setOnMenuItemClickListener(this)
 

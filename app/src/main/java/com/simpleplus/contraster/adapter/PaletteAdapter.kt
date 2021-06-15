@@ -91,7 +91,11 @@ class PaletteAdapter (private val activity: Activity,val viewModel: MyPaletteVie
 
     private fun bindTexts(holder: MyViewHolder,myPalette: MyPalette) {
 
-        holder.binder.rowPaletteTxtName.text = activity.getString(R.string.label_palette_name,myPalette.name,myPalette.ratioLabel)
+        if(myPalette.name.isEmpty()){
+            holder.binder.rowPaletteTxtName.text = activity.getString(R.string.label_palette_name,"Palette",myPalette.ratioLabel)
+        }else{
+            holder.binder.rowPaletteTxtName.text = activity.getString(R.string.label_palette_name,myPalette.name,myPalette.ratioLabel)
+        }
         holder.binder.rowPaletteTxtBackgroundColor.text = activity.getString(R.string.label_background_color,String.format("#%06X", 0xFFFFFF and myPalette.backGroundColor))
         holder.binder.rowPaletteTxtForegroundColor.text = activity.getString(R.string.label_text_color,String.format("#%06X", 0xFFFFFF and myPalette.foregroundColor))
 

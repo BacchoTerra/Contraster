@@ -31,4 +31,11 @@
     <string name="label_wish_to_delete_palette">Do you really want to delete this palette? This action cannot be undone.</string>
     <string name="snackBar_palette_deleted">Palette deleted</string>
     <string name="label_no_palettes">No palette saved. Save your palettes by clicking \"⋮\" on the previous page.</string>
+    <string name="label_save">Save</string>
+
+    <string name="menu_label_save">Save</string>
+    <string name="menu_label_about_us">About us</string>
+    <string name="menu_label_how_to_use">How to use</string>
+    <string name="menu_label_see_palettes">See palettes</string>
+
 </resources>

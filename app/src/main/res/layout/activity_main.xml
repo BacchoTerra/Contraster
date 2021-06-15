@@ -104,6 +104,9 @@
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:strokeColor="@color/selector_btn_group"
+                    android:textColor="@color/selector_btn_group"
+                    app:rippleColor="@color/buttonGroupCheckedColor"
                     android:text="@string/label_background"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -111,6 +114,9 @@
                     android:id="@+id/activity_main_btnText"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
+                    app:strokeColor="@color/selector_btn_group"
+                    android:textColor="@color/selector_btn_group"
+                    app:rippleColor="@color/buttonGroupCheckedColor"
                     android:layout_height="wrap_content"
                     android:text="@string/label_text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -124,12 +130,12 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/shape_text_view_stroked"
                 android:paddingHorizontal="16dp"
-                tools:text="#FFFFFF"
                 android:textColor="@color/onBackground"
                 app:layout_constraintBottom_toBottomOf="@+id/activity_main_materialBtnGroup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/activity_main_materialBtnGroup"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -203,6 +209,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
                 app:layout_constraintVertical_bias="0.0" />
 
+
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"
                 android:layout_width="wrap_content"
@@ -216,6 +223,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activity_main_saturationPicker" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -32,5 +32,11 @@
     <string name="label_wish_to_delete_palette">Deseja realmente deletar esta paleta? Essa ação não poderá ser desfeita.</string>
     <string name="snackBar_palette_deleted">Paleta deletada</string>
     <string name="label_no_palettes">Nenhuma paleta salva. Salve suas paletas clicando no \"⋮\" na página anterior.</string>
+    <string name="label_save">Salvar</string>
+
+    <string name="menu_label_save">Salvar</string>
+    <string name="menu_label_about_us">Sobre nós</string>
+    <string name="menu_label_how_to_use">Como usar</string>
+    <string name="menu_label_see_palettes">Ver paletas</string>
 
 </resources>

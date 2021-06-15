@@ -14,8 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto"
-        android:text="Cancelar"
-        android:textColor="@color/purple_500"
+        android:text="@string/label_cancel"
+        android:textColor="@color/onBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,9 +39,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:boxStrokeColor="@color/purple_500"
+        app:boxStrokeColor="@color/onBackground"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:hintTextColor="@color/onBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/dialog_save_palette_txtAddName"
         app:layout_constraintTop_toBottomOf="@+id/dialog_save_palette_txtAddName">
@@ -63,7 +64,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/purple_500"
-        android:text="Salvar"
+        android:text="@string/label_save"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

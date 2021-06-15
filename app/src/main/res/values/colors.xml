@@ -11,11 +11,15 @@
 
     <color name="backgroundColor">#F8FBFF</color>
     <color name="onBackground">#575757</color>
+    <color name="dialogBackgroundColor">#F8FBFF</color>
 
 
     <color name="defaultBackgroundColor">#310aff</color>
     <color name="defaultTextColor">#a1ff0a</color>
 
     <color name="toolbarTextColor">@color/onBackground</color>
+
+    <color name="buttonGroupCheckedColor">@color/purple_500</color>
+    <color name="buttonGroupUncheckedColor">@color/onBackground</color>
 
 </resources>

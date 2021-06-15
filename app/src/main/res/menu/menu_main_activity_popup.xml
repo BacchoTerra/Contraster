@@ -2,19 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Salvar"
+        android:title="@string/menu_label_save"
         android:id="@+id/menu_main_activity_popup_save"/>
 
     <item
-        android:title="Sobre"
-        android:id="@+id/menu_main_activity_popup_about"/>
-
-    <item
-        android:title="Informações"
-        android:id="@+id/menu_main_activity_popup_info"/>
-
-    <item
-        android:title="Ver paletas"
+        android:title="@string/menu_label_see_palettes"
         android:id="@+id/menu_main_activity_popup_see_palettes"/>
 
 
