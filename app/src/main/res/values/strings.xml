@@ -18,4 +18,25 @@
     <string name="error_invalid_color">Essa não é uma cor válida</string>
     <string name="label_lorem_ipsum_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="label_ratio_calculation">Ratio calculation</string>
+    <string name="label_background_color">%1$s</string>
+    <string name="label_text_color">%1$s</string>
+
+    <string name="label_palette_name">%1$s (%2$s)</string>
+    <string name="label_add_name">Adicionar nome</string>
+    <string name="hint_palette_name">Palette</string>
+
+
+    <string name="snackBar_palette_saved">Paleta salva</string>
+    <string name="label_delete">Deletar</string>
+    <string name="label_cancel">Cancelar</string>
+    <string name="label_wish_to_delete_palette">Deseja realmente deletar esta paleta? Essa ação não poderá ser desfeita.</string>
+    <string name="snackBar_palette_deleted">Paleta deletada</string>
+    <string name="label_no_palettes">Nenhuma paleta salva. Salve suas paletas clicando no \"⋮\" na página anterior.</string>
+    <string name="label_save">Salvar</string>
+
+    <string name="menu_label_save">Salvar</string>
+    <string name="menu_label_about_us">Sobre nós</string>
+    <string name="menu_label_how_to_use">Como usar</string>
+    <string name="menu_label_see_palettes">Ver paletas</string>
+
 </resources>

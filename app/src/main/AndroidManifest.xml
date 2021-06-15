@@ -2,14 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.simpleplus.contraster">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".ContrasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Contraster">
-        <activity android:name=".activities.MainActivity"
+        <activity
+            android:name=".activities.PalettesActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +28,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8194589944395897~8557669109"/>
-
+            android:value="ca-app-pub-8194589944395897~8557669109" />
     </application>
 
 </manifest>

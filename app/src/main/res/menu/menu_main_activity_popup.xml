@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/menu_label_save"
+        android:id="@+id/menu_main_activity_popup_save"/>
+
+    <item
+        android:title="@string/menu_label_see_palettes"
+        android:id="@+id/menu_main_activity_popup_see_palettes"/>
+
+
+</menu>

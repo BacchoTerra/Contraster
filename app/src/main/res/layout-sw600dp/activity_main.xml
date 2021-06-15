@@ -20,6 +20,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <ImageView
+        android:id="@+id/activity_main_imageMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/defaultTextColor"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_txtAppName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_txtAppName"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
     <TextView
         android:id="@+id/activity_main_txtContrastRatio"
         android:layout_width="0dp"
