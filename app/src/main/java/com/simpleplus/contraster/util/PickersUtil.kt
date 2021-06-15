@@ -81,7 +81,7 @@ class PickersUtil(
 
     }
 
-    fun updateGroupWithInputColor(color:Int){
+    fun updateGroupChosenColor(color:Int){
 
         if (btnBackground.isChecked) {
             selectedBackgroundColor = color
@@ -90,7 +90,6 @@ class PickersUtil(
             selectedForegroundColor = color
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedForegroundColor) })
         }
-
     }
 
     override fun onColorChanged(

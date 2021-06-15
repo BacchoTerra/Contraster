@@ -16,4 +16,6 @@
     <color name="defaultBackgroundColor">#310aff</color>
     <color name="defaultTextColor">#a1ff0a</color>
 
+    <color name="toolbarTextColor">@color/onBackground</color>
+
 </resources>
