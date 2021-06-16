@@ -17,10 +17,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 import androidx.core.widget.ImageViewCompat
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
-import com.simpleplus.contraster.ContrasterApplication
+import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.R
 
 import com.simpleplus.contraster.databinding.ActivityMainBinding
@@ -87,9 +89,9 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     }
 
     private fun initAdd() {
-        MobileAds.initialize(this) {}
 
-        binder.adView.loadAd(AdRequest.Builder().build())
+        val adRequest = AdRequest.Builder().build()
+        binder.adView.loadAd(adRequest)
     }
 
     private fun showPaletteSavingDialog() {

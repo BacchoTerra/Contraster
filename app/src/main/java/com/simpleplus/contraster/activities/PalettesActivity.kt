@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.simpleplus.contraster.ContrasterApplication
-import com.simpleplus.contraster.R
+import com.google.android.gms.ads.AdRequest
+import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.adapter.PaletteAdapter
 import com.simpleplus.contraster.databinding.ActivityPalettesBinding
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
@@ -35,6 +35,7 @@ class PalettesActivity : AppCompatActivity() {
         setContentView(binder.root)
         initRecyclerView()
         initToolbar()
+        initAd()
     }
 
     private fun initToolbar() {
@@ -57,6 +58,13 @@ class PalettesActivity : AppCompatActivity() {
 
         retrieveAllPalettes(adapter)
 
+
+    }
+
+    private fun initAd () {
+
+        val adRequest = AdRequest.Builder().build()
+        binder.activityPalettesBannerAdd.loadAd(adRequest)
 
     }
 
