@@ -62,6 +62,7 @@
         tools:text="#454545" />
 
     <ImageView
+        android:contentDescription="@string/cd_delete"
         android:id="@+id/row_palette_imageDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,6 +77,7 @@
         app:srcCompat="@drawable/ic_baseline_delete_outline_24" />
 
     <ImageView
+        android:contentDescription="@string/cd_edit_palette"
         android:id="@+id/row_palette_imageEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

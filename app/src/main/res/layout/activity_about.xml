@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="@+id/about_activity_imageBack" />
 
     <ImageView
+        android:contentDescription="@string/cd_back_button"
         android:paddingVertical="8dp"
         android:paddingEnd="4dp"
         android:id="@+id/about_activity_imageBack"
@@ -35,6 +36,7 @@
         tools:ignore="RtlSymmetry" />
 
     <ImageView
+        android:contentDescription="@string/cd_app_logo"
         android:id="@+id/imageView6"
         android:layout_width="150dp"
         android:layout_height="150dp"

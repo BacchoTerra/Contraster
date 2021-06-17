@@ -87,8 +87,6 @@ class PickersUtil(
 
         if (btnBackground.isChecked) {
             selectedBackgroundColor = color
-            Log.i(TAG, "Color int inside PickerUtil: $color")
-            Log.i(TAG, "Color hex inside PickerUtil: ${String.format("#%06X", 0xFFFFFF and color)}")
             pickerGroup.setColor(IntegerHSLColor().also { it.setFromColorInt(selectedBackgroundColor) })
 
         }else {
@@ -114,9 +112,6 @@ class PickersUtil(
         color: IntegerHSLColor,
         value: Int
     ) {
-
-        Log.i(TAG, "Color int inside color group: ${color.toPureHueColorInt()}")
-        Log.i(TAG, "Color hex inside color group: ${String.format("#%06X", 0xFFFFFF and color.toColorInt())}")
 
         if (btnBackground.isChecked) {
             selectedBackgroundColor = color.toColorInt()

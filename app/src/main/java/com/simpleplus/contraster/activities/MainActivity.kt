@@ -255,11 +255,6 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     override fun onColorValueSet(colorInt: Int) {
         pickersUtil.updateGroupChosenColor(colorInt)
-        Log.i(TAG, "Color int recovered from listener: $colorInt")
-        Log.i(
-            TAG,
-            "Color hex recovered from listener: ${String.format("#%06X", 0xFFFFFF and colorInt)}"
-        )
     }
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {

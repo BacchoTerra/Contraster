@@ -3,17 +3,14 @@
     <string name="label_lorem_ipsum">Lorem ipsum dolor sit amet</string>
     <string name="label_background">Background</string>
     <string name="label_text">Texto</string>
-    <string name="label_object">Objeto</string>
     <string name="label_brightness">Claridade</string>
-    <string name="label_alpha">Opacidade</string>
-    <string name="label_target">Alvo</string>
     <string name="label_hue">Tonalidade</string>
     <string name="label_saturation">Saturação</string>
-    <string name="label_initial_aa_ratio">AA</string>
     <string name="hint_hex_color">Hex color</string>
     <string name="cd_confirm_hex_value">Confirmar valor HEX</string>
     <string name="label_hex_rule_1">- Use o formato de 6 dígitos precedidos por \"#\".</string>
     <string name="label_hex_rule_2">- Não use valores hexadecimais com opacidade.</string>
+    <string name="label_hex_rule3">- Pode haver alteração no código HEX, mas as taxas de contraste permanecem precisas.</string>
     <string name="error_hex_value">Código hex inválido</string>
     <string name="error_invalid_color">Essa não é uma cor válida</string>
     <string name="label_lorem_ipsum_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
@@ -34,15 +31,23 @@
     <string name="label_no_palettes">Nenhuma paleta salva. Salve suas paletas clicando no \" + \" na página anterior.</string>
     <string name="label_save">Salvar</string>
 
-    <string name="menu_label_save">Salvar</string>
     <string name="menu_label_about_us">Sobre nós</string>
-    <string name="menu_label_how_to_use">Como usar</string>
     <string name="menu_label_see_palettes">Ver paletas</string>
-    <string name="label_hex_code_alteration">- Pode haver alteração no código HEX, mas as taxas de contraste permanecem precisas.</string>
     <string name="label_about_us_message">Apreciamos e sabemos a importância da interação com os usuários, por isso, queremos (e incentivamos) que você fique à vontade para entrar em contato conosco para sugerir melhorias, dar ideias, ou relatar bugs. É um prazer ter você aqui!</string>
 
     <string name="label_privacy_policy">Política de privacidade</string>
     <string name="label_rate_our_app">Avalie nosso aplicativo</string>
     <string name="label_contact_us">Entre em contato</string>
+    <string name="toast_could_not_do_it">Não conseguimos completar a ação</string>
+
+
+    <string name="cd_back_button">Voltar</string>
+    <string name="cd_app_logo">Logo do aplicativo</string>
+    <string name="cd_save_palette">Salvar paleta</string>
+    <string name="cd_more">Mais</string>
+    <string name="cd_no_palettes">Não há paletas salvas</string>
+    <string name="cd_trash">Imagem de lixeira</string>
+    <string name="cd_delete">Deletar paleta</string>
+    <string name="cd_edit_palette">Editar paleta</string>
 
 </resources>

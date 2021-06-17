@@ -3,17 +3,14 @@
     <string name="label_lorem_ipsum">Lorem ipsum dolor sit amet</string>
     <string name="label_background">Background</string>
     <string name="label_text">Text</string>
-    <string name="label_object">Object</string>
     <string name="label_brightness">Brightness</string>
-    <string name="label_alpha">Opacity</string>
-    <string name="label_target">Target</string>
     <string name="label_hue">Hue</string>
     <string name="label_saturation">Saturation</string>
-    <string name="label_initial_aa_ratio">AA</string>
     <string name="hint_hex_color">Hex color</string>
     <string name="cd_confirm_hex_value">Confirm HEX value</string>
     <string name="label_hex_rule_1">- Use the 6-digit format preceded by \"# \". </string>
     <string name="label_hex_rule_2">- Do not use hexadecimal values with opacity.</string>
+    <string name="label_hex_rule3">- There may be a change in the HEX code, but contrast ratios remain accurate.</string>
     <string name="error_hex_value">Invalid hex coed</string>
     <string name="error_invalid_color">This is not a valid color</string>
     <string name="label_lorem_ipsum_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
@@ -33,16 +30,25 @@
     <string name="label_no_palettes">No palette saved. Save your palettes by clicking \" + \" on the previous page.</string>
     <string name="label_save">Save</string>
 
-    <string name="menu_label_save">Save</string>
     <string name="menu_label_about_us">About us</string>
-    <string name="menu_label_how_to_use">How to use</string>
     <string name="menu_label_see_palettes">See palettes</string>
-    <string name="label_hex_code_alteration">- There may be a change in the HEX code, but contrast ratios remain accurate.</string>
 
     <string name="label_about_us_message">We appreciate ,and know, the importance of interacting with users, so we want (and encourage) you to feel free to contact us to suggest improvements, give ideas, or report bugs. It\'s a pleasure to have you here!</string>
 
     <string name="label_privacy_policy">Privacy policy</string>
     <string name="label_rate_our_app">Rate our app</string>
     <string name="label_contact_us">Contact us</string>
+
+    <string name="toast_could_not_do_it">We could not complete the action</string>
+
+
+    <string name="cd_back_button">Back</string>
+    <string name="cd_app_logo">Application logo</string>
+    <string name="cd_save_palette">Save palette</string>
+    <string name="cd_more">More</string>
+    <string name="cd_no_palettes">No saved palettes</string>
+    <string name="cd_trash">Trash image</string>
+    <string name="cd_delete">Delete palette</string>
+    <string name="cd_edit_palette">Edit palette</string>
 
 </resources>

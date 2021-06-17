@@ -30,7 +30,7 @@ class PalettesActivity : AppCompatActivity() {
     }
 
     //ViewModel
-    private val viewModel : MyPaletteViewModel by viewModels {
+    private val viewModel: MyPaletteViewModel by viewModels {
         MyPaletteViewModel.MyPaletteViewModelFactory((application as ContrasterApplication).repository)
 
     }
@@ -52,7 +52,7 @@ class PalettesActivity : AppCompatActivity() {
 
     private fun initRecyclerView() {
 
-        val adapter = PaletteAdapter(this@PalettesActivity,viewModel,layoutInflater)
+        val adapter = PaletteAdapter(this@PalettesActivity, viewModel, layoutInflater)
 
         binder.activityPalettesRecyclerView.apply {
 
@@ -66,7 +66,7 @@ class PalettesActivity : AppCompatActivity() {
 
     }
 
-    private fun initAd () {
+    private fun initAd() {
 
         lifecycleScope.launch(Dispatchers.Main) {
             val adRequest = AdRequest.Builder().build()
@@ -79,9 +79,9 @@ class PalettesActivity : AppCompatActivity() {
 
         viewModel.allPalettes.observe(this) {
 
-            if(it.isEmpty()) {
+            if (it.isEmpty()) {
                 binder.activityPalettesContentNoContent.root.visibility = View.VISIBLE
-            }else{
+            } else {
                 binder.activityPalettesContentNoContent.root.visibility = View.GONE
             }
             adapter.submitList(it)
@@ -91,10 +91,13 @@ class PalettesActivity : AppCompatActivity() {
 
     }
 
-    fun sendPaletteToEdition(backgroundColor:Int,foregroundColor:Int) {
+    fun sendPaletteToEdition(backgroundColor: Int, foregroundColor: Int) {
 
-        setResult(RESULT_OK,Intent().putExtra(KEY_FOR_BACKGROUND,backgroundColor).putExtra(
-            KEY_FOR_FOREGROUND,foregroundColor))
+        setResult(
+            RESULT_OK, Intent().putExtra(KEY_FOR_BACKGROUND, backgroundColor).putExtra(
+                KEY_FOR_FOREGROUND, foregroundColor
+            )
+        )
         finish()
 
     }

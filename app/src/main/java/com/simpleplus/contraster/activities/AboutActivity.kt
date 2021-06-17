@@ -33,13 +33,17 @@ class AboutActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    private fun showErrorToast() {
+        Toast.makeText(this,getString(R.string.toast_could_not_do_it),Toast.LENGTH_SHORT).show()
+    }
+
     private fun openPrivacyPolicy() {
         val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.freeprivacypolicy.com/live/4a644714-7ad8-48db-b06a-d992c3461d22"))
         try {
             startActivity(webIntent)
         }catch (e : ActivityNotFoundException) {
             e.printStackTrace()
-            Log.i("Porsche", "openPrivacyPolicy: ${e.printStackTrace()}")
+            showErrorToast()
         }
     }
 
@@ -49,7 +53,7 @@ class AboutActivity : AppCompatActivity(), View.OnClickListener {
         try {
             startActivity(marketIntent)
         }catch (e : ActivityNotFoundException) {
-            Log.i("Porsche", "openPrivacyPolicy: ${e.printStackTrace()}")
+            showErrorToast()
         }
     }
 
@@ -62,7 +66,7 @@ class AboutActivity : AppCompatActivity(), View.OnClickListener {
         try {
             startActivity(emailIntent)
         }catch (e: ActivityNotFoundException){
-            Log.i("Porsche", "openPrivacyPolicy: ${e.printStackTrace()}")
+            showErrorToast()
         }
 
     }
