@@ -12,10 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Contraster">
-        <activity android:name=".activities.AboutActivity"></activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.PalettesActivity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.MainActivity"
             android:launchMode="singleTop"

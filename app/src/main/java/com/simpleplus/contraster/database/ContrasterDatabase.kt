@@ -28,7 +28,8 @@ abstract class ContrasterDatabase : RoomDatabase() {
                     application,
                     ContrasterDatabase::class.java,
                     "contraster_database"
-                ).fallbackToDestructiveMigration().build()
+                ).addCallback(ContrasterDatabaseCallback(scope))
+                    .build()
                 INSTANCE = instance
 
                 instance
@@ -43,13 +44,18 @@ abstract class ContrasterDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let {
                 scope.launch {
-                    var paletteDao = it.getDao()
+                    val paletteDao = it.getDao()
 
+                    paletteDao.deleteAll()
 
-
-                    //TODO: Adicionar pré palettas
-
-
+                    paletteDao.apply {
+                        insert(MyPalette("Our company", "AA", -1778689, -14409480))
+                        insert(MyPalette("Natural", "AA", -132353, -14459389))
+                        insert(MyPalette("Woods", "AA", -8371200, -2823215))
+                        insert(MyPalette("Aggressive red", "AA", -13762560, -64251))
+                        insert(MyPalette("Publicity", "AA", -11599704, -2374400))
+                        insert(MyPalette("Modern", "AA", -16777170, -2721536))
+                    }
 
 
                 }

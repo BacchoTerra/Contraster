@@ -16,6 +16,9 @@ interface MyPaletteDao {
     @Update
     suspend fun update(palette:MyPalette)
 
+    @Query("DELETE FROM palette_table")
+    suspend fun deleteAll()
+
     @Query ("SELECT * FROM palette_table")
     fun selectAll():Flow<List<MyPalette>>
 

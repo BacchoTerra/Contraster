@@ -3,6 +3,7 @@ package com.simpleplus.contraster.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -11,6 +12,7 @@ import com.google.android.gms.ads.AdRequest
 import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.adapter.PaletteAdapter
 import com.simpleplus.contraster.databinding.ActivityPalettesBinding
+import com.simpleplus.contraster.model.MyPalette
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -82,8 +84,8 @@ class PalettesActivity : AppCompatActivity() {
             }else{
                 binder.activityPalettesContentNoContent.root.visibility = View.GONE
             }
-
             adapter.submitList(it)
+
 
         }
 

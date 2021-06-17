@@ -14,8 +14,8 @@
     <color name="dialogBackgroundColor">#353535</color>
 
 
-    <color name="defaultBackgroundColor">#809dff</color>
-    <color name="defaultTextColor">#2420f8</color>
+    <color name="defaultBackgroundColor">#012089</color>
+    <color name="defaultTextColor">#37cdd7</color>
 
     <color name="toolbarTextColor">@color/onBackground</color>
 
