@@ -8,7 +8,6 @@
     tools:context=".activities.MainActivity">
 
 
-
     <TextView
         android:id="@+id/activity_main_txtAppName"
         android:layout_width="wrap_content"
@@ -26,12 +25,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="8dp"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_main_txtAppName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/activity_main_txtAppName"
         app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        app:tint="@color/defaultTextColor" />
+
+    <ImageView
+        android:id="@+id/activity_main_imageAddPalette"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_imageMenu"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_imageMenu"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_imageMenu"
+        app:srcCompat="@drawable/ic_baseline_add_24"
         app:tint="@color/defaultTextColor" />
 
     <TextView
@@ -41,12 +51,12 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto"
-        tools:text="Aa 5.00 AA"
         android:textColor="@color/defaultTextColor"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtAppName"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtAppName" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_txtAppName"
+        tools:text="Aa 5.00 AA" />
 
     <TextView
         android:id="@+id/activity_main_txtMessage"
@@ -104,22 +114,22 @@
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:strokeColor="@color/selector_btn_group"
+                    android:text="@string/label_background"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/selector_btn_group"
                     app:rippleColor="@color/buttonGroupCheckedColor"
-                    android:text="@string/label_background"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    app:strokeColor="@color/selector_btn_group" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/activity_main_btnText"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
-                    app:strokeColor="@color/selector_btn_group"
-                    android:textColor="@color/selector_btn_group"
-                    app:rippleColor="@color/buttonGroupCheckedColor"
                     android:layout_height="wrap_content"
                     android:text="@string/label_text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/selector_btn_group"
+                    app:rippleColor="@color/buttonGroupCheckedColor"
+                    app:strokeColor="@color/selector_btn_group" />
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -223,7 +233,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activity_main_saturationPicker" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

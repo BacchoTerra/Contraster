@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 import androidx.core.widget.ImageViewCompat
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
@@ -31,6 +32,8 @@ import com.simpleplus.contraster.fragments.SetValueBottomSheet
 import com.simpleplus.contraster.model.MyPalette
 import com.simpleplus.contraster.util.PickersUtil
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     SetValueBottomSheet.OnColorValueSetListener, PopupMenu.OnMenuItemClickListener {
@@ -85,13 +88,19 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
             showPopUpMenu()
         }
 
+        binder.activityMainImageAddPalette.setOnClickListener {
+            showPaletteSavingDialog()
+        }
+
 
     }
 
     private fun initAdd() {
 
-        val adRequest = AdRequest.Builder().build()
-        binder.adView.loadAd(adRequest)
+        lifecycleScope.launch(Dispatchers.Main) {
+            val adRequest = AdRequest.Builder().build()
+            binder.adView.loadAd(adRequest)
+        }
     }
 
     private fun showPaletteSavingDialog() {
@@ -151,6 +160,10 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                     binder.activityMainImageMenu,
                     ColorStateList.valueOf(color)
                 )
+                ImageViewCompat.setImageTintList(
+                    binder.activityMainImageAddPalette,
+                    ColorStateList.valueOf(color)
+                )
             }
         }
 
@@ -165,6 +178,10 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         binder.activityMainTxtInformation.setTextColor(foregroundColor)
         ImageViewCompat.setImageTintList(
             binder.activityMainImageMenu,
+            ColorStateList.valueOf(foregroundColor)
+        )
+        ImageViewCompat.setImageTintList(
+            binder.activityMainImageAddPalette,
             ColorStateList.valueOf(foregroundColor)
         )
 
@@ -249,11 +266,11 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
         when (item?.itemId) {
 
-            R.id.menu_main_activity_popup_save -> showPaletteSavingDialog()
-
             R.id.menu_main_activity_popup_see_palettes -> {
                 palettesActivityLauncher.launch(Intent(this, PalettesActivity::class.java))
             }
+
+            R.id.menu_main_activity_popup_about -> startActivity(Intent(this,AboutActivity::class.java))
 
         }
 

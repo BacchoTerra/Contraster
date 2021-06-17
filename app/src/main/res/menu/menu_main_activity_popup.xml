@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="@string/menu_label_save"
-        android:id="@+id/menu_main_activity_popup_save"/>
+        android:title="@string/menu_label_about_us"
+        android:id="@+id/menu_main_activity_popup_about"/>
 
     <item
         android:title="@string/menu_label_see_palettes"

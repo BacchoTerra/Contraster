@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Contraster">
+        <activity android:name=".activities.AboutActivity"></activity>
         <activity
             android:name=".activities.PalettesActivity"
             android:parentActivityName=".activities.MainActivity" />

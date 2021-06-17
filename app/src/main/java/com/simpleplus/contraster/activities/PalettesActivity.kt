@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.adapter.PaletteAdapter
 import com.simpleplus.contraster.databinding.ActivityPalettesBinding
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class PalettesActivity : AppCompatActivity() {
 
@@ -63,8 +66,10 @@ class PalettesActivity : AppCompatActivity() {
 
     private fun initAd () {
 
-        val adRequest = AdRequest.Builder().build()
-        binder.activityPalettesBannerAdd.loadAd(adRequest)
+        lifecycleScope.launch(Dispatchers.Main) {
+            val adRequest = AdRequest.Builder().build()
+            binder.activityPalettesBannerAdd.loadAd(adRequest)
+        }
 
     }
 

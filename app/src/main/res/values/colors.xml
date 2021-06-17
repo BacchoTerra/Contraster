@@ -21,5 +21,6 @@
 
     <color name="buttonGroupCheckedColor">@color/purple_500</color>
     <color name="buttonGroupUncheckedColor">@color/onBackground</color>
+    <color name="companyColor">#246EE9</color>
 
 </resources>
