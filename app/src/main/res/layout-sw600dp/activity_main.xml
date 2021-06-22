@@ -79,11 +79,12 @@
         android:id="@+id/activity_main_txtInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/label_ratio_calculation"
+        android:padding="4dp"
+        android:text="@string/label_test_palette"
+        android:textStyle="bold"
         android:textColor="@color/defaultTextColor"
-        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtMessage"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_txtMessage" />
 
