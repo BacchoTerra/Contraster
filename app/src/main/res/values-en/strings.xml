@@ -91,5 +91,6 @@
     <string name="label_instagram_post">Postagem de instagram</string>
 
     <string name="cd_switch_colors">Switch colors</string>
+    <string name="toast_click_to_close">Press again to exit</string>
 
 </resources>

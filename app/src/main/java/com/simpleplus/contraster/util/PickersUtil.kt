@@ -112,12 +112,7 @@ class PickersUtil(
         val interceptor = selectedBackgroundColor
         selectedBackgroundColor = selectedForegroundColor
         selectedForegroundColor = interceptor
-
-        if (btnBackground.isChecked) {
-            handleHexColorDisplay(selectedBackgroundColor)
-        }else {
-            handleHexColorDisplay(selectedForegroundColor)
-        }
+        setGroupColorWithoutFuckingEverything()
 
 
     }

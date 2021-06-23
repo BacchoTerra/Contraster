@@ -84,4 +84,5 @@
     <string name="label_instagram_time_ago">Há 1 dia</string>
     <string name="label_instagram_post">Postagem de instagram</string>
     <string name="cd_switch_colors">Inverter cores</string>
+    <string name="toast_click_to_close">Clique de novo para sair</string>
 </resources>
