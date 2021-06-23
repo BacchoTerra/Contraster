@@ -88,6 +88,18 @@
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtMessage"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_txtMessage" />
 
+    <ImageView
+        android:contentDescription="@string/cd_switch_colors"
+        android:id="@+id/activity_main_imageSwitch"
+        app:tint="@color/defaultTextColor"
+        android:layout_width="wrap_content"
+        android:padding="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_txtInformation"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_txtMessage"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_txtInformation"
+        app:srcCompat="@drawable/ic_baseline_autorenew_24" />
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"

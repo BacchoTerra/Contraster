@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         binder.activityMainImageMenu.setOnClickListener(this)
         binder.activityMainImageAddPalette.setOnClickListener(this)
         binder.activityMainTxtInformation.setOnClickListener(this)
+        binder.activityMainImageSwitch.setOnClickListener(this)
 
 
     }
@@ -191,6 +192,11 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                     binder.activityMainImageAddPalette,
                     ColorStateList.valueOf(color)
                 )
+
+                ImageViewCompat.setImageTintList(
+                    binder.activityMainImageSwitch,
+                    ColorStateList.valueOf(color)
+                )
             }
         }
 
@@ -209,6 +215,12 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         )
         ImageViewCompat.setImageTintList(
             binder.activityMainImageAddPalette,
+            ColorStateList.valueOf(foregroundColor)
+        )
+
+
+        ImageViewCompat.setImageTintList(
+            binder.activityMainImageSwitch,
             ColorStateList.valueOf(foregroundColor)
         )
 
@@ -311,9 +323,16 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
             binder.activityMainImageMenu.id -> showPopUpMenu()
             binder.activityMainImageAddPalette.id -> showPaletteSavingDialog()
             binder.activityMainTxtInformation.id -> showRealUseDialog()
+            binder.activityMainImageSwitch.id -> {
+                pickersUtil.switchColors()
+                paintLayoutWithSelectedPalette(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
+                calculateContrastRatio(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
+            }
 
         }
     }
+
+    //TODO: Fazer um toast no onBackPressed para evitar saida acidental
 
 
 }
