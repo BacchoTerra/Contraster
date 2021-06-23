@@ -8,8 +8,8 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
-import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.PopupMenu
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -18,10 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 import androidx.core.widget.ImageViewCompat
 import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.R
@@ -36,10 +33,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
-    SetValueBottomSheet.OnColorValueSetListener, PopupMenu.OnMenuItemClickListener {
+    SetValueBottomSheet.OnColorValueSetListener, PopupMenu.OnMenuItemClickListener,
+    View.OnClickListener {
     companion object {
         private const val TAG = "Porsche"
         const val BTM_SHEET_BUNDLE_KEY = "com.simpleplus.contraster.BTMSHEET_KEY"
+        const val DIALOG_REAL_USE_LAYOUT_KEY = "com.simpleplus.contraster.DIALOG_LAYOUT_KEY"
+        const val DIALOG_REAL_USE_BACKGROUND_KEY = "com.simpleplus.contraster.DIALOG_BACKGROUND_KEY"
+        const val DIALOG_REAL_USE_FOREGROUND_KEY = "com.simpleplus.contraster.DIALOG_FOREGROUND_KEY"
+
+        const val IDENTIFIER_ARTICLE_LAYOUT = "article_layout"
+        const val IDENTIFIER_INSTAGRAM_LAYOUT = "instagram_layout"
+        const val IDENTIFIER_MUSIC_LAYOUT = "music_layout"
     }
 
     //layout components
@@ -55,6 +60,9 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     //Utils
     private lateinit var pickersUtil: PickersUtil
     private var ratioLabel = "AA"
+    private val realUseArray by lazy {
+        arrayOf(getString(R.string.label_article), getString(R.string.label_music_player))
+    }
 
     //String components
     private lateinit var spannableString: SpannableString
@@ -67,7 +75,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                 val background = it.data?.extras?.getInt(PalettesActivity.KEY_FOR_BACKGROUND)!!
                 val foreground = it.data?.extras?.getInt(PalettesActivity.KEY_FOR_FOREGROUND)!!
                 pickersUtil.updateGroupWithSelectedPalette(background, foreground)
-                paintLayoutWithSelectedPalette(background,foreground)
+                paintLayoutWithSelectedPalette(background, foreground)
 
             }
 
@@ -76,26 +84,46 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binder.root)
-        initAdd()
+        initAd()
         pickersUtil = PickersUtil(binder, this, this)
-        calculateContrastRatio(
-            pickersUtil.selectedBackgroundColor,
-            pickersUtil.selectedForegroundColor
-        )
+        calculateContrastRatio(pickersUtil.selectedBackgroundColor, pickersUtil.selectedForegroundColor)
+
         showAndHandleBottomSheet()
 
-        binder.activityMainImageMenu.setOnClickListener {
-            showPopUpMenu()
-        }
-
-        binder.activityMainImageAddPalette.setOnClickListener {
-            showPaletteSavingDialog()
-        }
+        binder.activityMainImageMenu.setOnClickListener(this)
+        binder.activityMainImageAddPalette.setOnClickListener(this)
+        binder.activityMainTxtInformation.setOnClickListener(this)
+        binder.activityMainImageSwitch.setOnClickListener(this)
 
 
     }
 
-    private fun initAdd() {
+    private fun showRealUseDialog() {
+
+        AlertDialog.Builder(this).apply {
+            setTitle(R.string.title_dialog_real_use)
+            setItems(realUseArray) { dialog, which ->
+
+                when (which) {
+                    0 -> initRealUseActivity(IDENTIFIER_ARTICLE_LAYOUT)
+                    1 -> initRealUseActivity(IDENTIFIER_MUSIC_LAYOUT)
+                }
+
+            }
+
+            show()
+        }
+    }
+
+    private fun initRealUseActivity(tag: String) {
+        startActivity(Intent(this@MainActivity, RealUseActivity::class.java).also {
+            it.putExtra(DIALOG_REAL_USE_LAYOUT_KEY, tag)
+            it.putExtra(DIALOG_REAL_USE_BACKGROUND_KEY, pickersUtil.selectedBackgroundColor)
+            it.putExtra(DIALOG_REAL_USE_FOREGROUND_KEY, pickersUtil.selectedForegroundColor)
+        })
+    }
+
+    private fun initAd() {
 
         lifecycleScope.launch(Dispatchers.Main) {
             val adRequest = AdRequest.Builder().build()
@@ -164,6 +192,11 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                     binder.activityMainImageAddPalette,
                     ColorStateList.valueOf(color)
                 )
+
+                ImageViewCompat.setImageTintList(
+                    binder.activityMainImageSwitch,
+                    ColorStateList.valueOf(color)
+                )
             }
         }
 
@@ -182,6 +215,12 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         )
         ImageViewCompat.setImageTintList(
             binder.activityMainImageAddPalette,
+            ColorStateList.valueOf(foregroundColor)
+        )
+
+
+        ImageViewCompat.setImageTintList(
+            binder.activityMainImageSwitch,
             ColorStateList.valueOf(foregroundColor)
         )
 
@@ -253,7 +292,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     }
 
-    override fun onColorValueSet(colorInt: Int) {
+    override fun onColorValueSetFromBottomSheet(colorInt: Int) {
         pickersUtil.updateGroupChosenColor(colorInt)
     }
 
@@ -265,13 +304,35 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                 palettesActivityLauncher.launch(Intent(this, PalettesActivity::class.java))
             }
 
-            R.id.menu_main_activity_popup_about -> startActivity(Intent(this,AboutActivity::class.java))
+            R.id.menu_main_activity_popup_about -> startActivity(
+                Intent(
+                    this,
+                    AboutActivity::class.java
+                )
+            )
 
         }
 
         return true
 
     }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+
+            binder.activityMainImageMenu.id -> showPopUpMenu()
+            binder.activityMainImageAddPalette.id -> showPaletteSavingDialog()
+            binder.activityMainTxtInformation.id -> showRealUseDialog()
+            binder.activityMainImageSwitch.id -> {
+                pickersUtil.switchColors()
+                paintLayoutWithSelectedPalette(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
+                calculateContrastRatio(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
+            }
+
+        }
+    }
+
+    //TODO: Fazer um toast no onBackPressed para evitar saida acidental
 
 
 }

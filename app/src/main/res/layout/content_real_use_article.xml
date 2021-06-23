@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/content_real_use_article_txtArticleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/label_lorem_ipsum"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/content_real_use_article_txtArticleAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_simple_plus"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/content_real_use_article_txtArticleTitle"
+            app:layout_constraintTop_toBottomOf="@+id/content_real_use_article_txtArticleTitle" />
+
+        <TextView
+            android:id="@+id/content_real_use_article_txtArticleReadTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/label_article_reed_time"
+            app:layout_constraintBottom_toBottomOf="@+id/content_real_use_article_txtArticleAuthor"
+            app:layout_constraintStart_toEndOf="@+id/content_real_use_article_txtArticleAuthor"
+            app:layout_constraintTop_toTopOf="@+id/content_real_use_article_txtArticleAuthor" />
+
+        <ImageView
+            android:id="@+id/content_real_use_article_imageArticle"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cd_image_mock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content_real_use_article_txtArticleAuthor"
+            tools:srcCompat="@drawable/instagram_post_pic_2" />
+
+        <TextView
+            android:id="@+id/content_real_use_article_txtArticleContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/label_lorem_ipsum_article"
+            android:lineSpacingExtra="3sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/content_real_use_article_txtArticleAuthor"
+            app:layout_constraintTop_toBottomOf="@+id/content_real_use_article_imageArticle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

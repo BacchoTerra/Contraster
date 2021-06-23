@@ -107,6 +107,21 @@ class PickersUtil(
 
     }
 
+    fun switchColors() {
+
+        val interceptor = selectedBackgroundColor
+        selectedBackgroundColor = selectedForegroundColor
+        selectedForegroundColor = interceptor
+
+        if (btnBackground.isChecked) {
+            handleHexColorDisplay(selectedBackgroundColor)
+        }else {
+            handleHexColorDisplay(selectedForegroundColor)
+        }
+
+
+    }
+
     override fun onColorChanged(
         picker: ColorSeekBar<IntegerHSLColor>,
         color: IntegerHSLColor,

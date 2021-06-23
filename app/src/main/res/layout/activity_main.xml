@@ -79,17 +79,31 @@
         android:id="@+id/activity_main_txtInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/label_ratio_calculation"
+        android:padding="8dp"
+        android:text="@string/label_test_palette"
         android:textColor="@color/defaultTextColor"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/activity_main_txtMessage"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_txtMessage" />
+
+    <ImageView
+        android:contentDescription="@string/cd_switch_colors"
+        android:id="@+id/activity_main_imageSwitch"
+        app:tint="@color/defaultTextColor"
+        android:layout_width="wrap_content"
+        android:padding="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_txtInformation"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_txtMessage"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_txtInformation"
+        app:srcCompat="@drawable/ic_baseline_autorenew_24" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/shape_top_rounded_view_group"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,10 +158,8 @@
                 android:background="@drawable/shape_text_view_stroked"
                 android:paddingHorizontal="16dp"
                 android:textColor="@color/onBackground"
-                app:layout_constraintBottom_toBottomOf="@+id/activity_main_materialBtnGroup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/activity_main_materialBtnGroup"
-                app:layout_constraintVertical_bias="1.0"
                 tools:text="#FFFFFF" />
 
             <TextView
@@ -237,10 +249,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activity_main_saturationPicker" />
 
+            <!-- TODO: retornar ad normal-->
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
 
 
 

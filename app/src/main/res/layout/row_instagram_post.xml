@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundColor"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageUserProfile"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/label_company_name"
+        android:textColor="@color/onBackground"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/row_instagram_post_imageUserProfile"
+        app:layout_constraintStart_toEndOf="@+id/row_instagram_post_imageUserProfile"
+        app:layout_constraintTop_toTopOf="@+id/row_instagram_post_imageUserProfile" />
+
+    <FrameLayout
+        android:id="@+id/row_instagram_post_containerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:layout_height="300dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_imageUserProfile" />
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageLike"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_containerLayout"
+        app:srcCompat="@drawable/ic_baseline_favorite_24"
+        app:tint="#D53939" />
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/row_instagram_post_imageLike"
+        app:layout_constraintStart_toEndOf="@+id/row_instagram_post_imageLike"
+        app:layout_constraintTop_toTopOf="@+id/row_instagram_post_imageLike"
+        app:srcCompat="@drawable/ic_instagram_comment"
+        app:tint="@color/onBackground" />
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/row_instagram_post_imageComment"
+        app:layout_constraintStart_toEndOf="@+id/row_instagram_post_imageComment"
+        app:layout_constraintTop_toTopOf="@+id/row_instagram_post_imageComment"
+        app:srcCompat="@drawable/ic_instagram_send"
+        app:tint="@color/onBackground" />
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageBookMark"
+        android:layout_width="15dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/row_instagram_post_imageSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/row_instagram_post_imageSend"
+        app:srcCompat="@drawable/ic_instagram_bookmark"
+        app:tint="@color/onBackground" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtLikeCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_instagram_like_numbers"
+        android:textColor="@color/onBackground"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/row_instagram_post_imageLike"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_imageLike" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtPostDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/label_instagram_post_desc"
+        android:textColor="@color/onBackground"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/row_instagram_post_imageBookMark"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/row_instagram_post_txtLikeCounter"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_txtLikeCounter" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtCommentCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/label_instagram_lcomments_number"
+        android:textColor="@color/onBackground"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/row_instagram_post_txtPostDesc"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_txtPostDesc" />
+
+    <ImageView
+        android:id="@+id/row_instagram_post_imageUserCommentProfile"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/row_instagram_post_txtCommentCounter"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_txtCommentCounter"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtAddComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/label_instagram_add_comment"
+        android:textColor="@color/onBackground"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/row_instagram_post_imageUserCommentProfile"
+        app:layout_constraintStart_toEndOf="@+id/row_instagram_post_imageUserCommentProfile"
+        app:layout_constraintTop_toTopOf="@+id/row_instagram_post_imageUserCommentProfile" />
+
+    <TextView
+        android:id="@+id/row_instagram_post_txtTimeAgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_instagram_time_ago"
+        android:textColor="@color/onBackground"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/row_instagram_post_imageUserCommentProfile"
+        app:layout_constraintTop_toBottomOf="@+id/row_instagram_post_imageUserCommentProfile"
+        tools:ignore="SmallSp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

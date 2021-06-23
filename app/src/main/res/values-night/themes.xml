@@ -21,5 +21,4 @@
     <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
         <item name="android:popupBackground">@color/dialogBackgroundColor</item>
     </style>
-
 </resources>
