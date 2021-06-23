@@ -5,12 +5,15 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
 import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -66,6 +69,9 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     //String components
     private lateinit var spannableString: SpannableString
+
+    //Flag for onBackPressed
+    var canClose = false
 
     //Activity launch components
     private val palettesActivityLauncher =
@@ -327,12 +333,22 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                 pickersUtil.switchColors()
                 paintLayoutWithSelectedPalette(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
                 calculateContrastRatio(pickersUtil.selectedBackgroundColor,pickersUtil.selectedForegroundColor)
+
             }
 
         }
     }
 
-    //TODO: Fazer um toast no onBackPressed para evitar saida acidental
+    override fun onBackPressed() {
+        if (canClose) {
+            super.onBackPressed()
+            return
+        }
+
+        canClose = true
+        Toast.makeText(this,R.string.toast_click_to_close,Toast.LENGTH_SHORT).show()
+        Handler(Looper.getMainLooper()).postDelayed({ canClose = false},4000)
 
 
+    }
 }
