@@ -107,7 +107,7 @@ class PickersUtil(
 
     }
 
-    fun switchColors() {
+    fun  switchColors() {
 
         val interceptor = selectedBackgroundColor
         selectedBackgroundColor = selectedForegroundColor

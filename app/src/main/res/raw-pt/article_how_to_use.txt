@@ -1,0 +1,25 @@
+<p>Esse pequeno artigo vai te ajudar a entender como usar as taxas de contraste para criar paletas mais acessíveis para seus designs ao atingir os padrões de acessibilidade da WCAG 2.0. Existem 4 categorias das quais você deve se atentar, obtidas através de uma pontuação entre 0 e 21:</p>
+
+<ul>
+<li>Fail (< 3.0)</li>
+<li>AA+ (3.0 - 4.49)</li>
+<li>AA (4.5 - 6.9)</li>
+<li>AAA (7.0 - 21.0)</li>
+</ul>
+
+<p>Observe que, quanto maior o número obtido, maior será o contraste entre suas cores. Leve em consideração um background preto com o texto em branco, esse é o maior contraste possível, então teria uma pontuação de 21.0. Inversamente, se usássemos um tom de cinza claro em um background branco, teríamos uma pontuação próxima de 0 devido ao baixo contraste entre essas cores.</p>
+
+<p><small>*Essas categorias são alcançadas através de cálculos feitos pela luminescência relativa das cores do background com o foreground.</small></p>
+
+<h6>Fail</h6>
+<p>Significa que a pontuação foi menor que 3.0, não existindo contraste o suficiente entre suas cores.</p>
+
+<h6>AA+</h6>
+<p>Significa que suas cores obtiveram uma pontuação entre 3.0 e 4.49, este é o mínimo de contraste recomendado para textos maiores que 18pt.</p>
+
+<h6>AA</h6>
+<p>Suas cores atingiram uma pontuação entre 4.5 e 6.9. Nesta pontuação, suas cores garantem um bom contraste para pessoas com acuidade visual de 20/40 (certo grau de deficiência visual) e para pessoas com visão sem alteração.<br/>Essa é considerada a melhor pontuação para textos menores que 18pt.</p>
+
+<h6>AAA</h6>
+<p>Suas cores atingiram uma pontuação de pelo menos 7.0. Melhor utilizada em artigos com grande período de leitura.</p>
+

@@ -317,6 +317,13 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
                 )
             )
 
+            R.id.menu_main_activity_popup_how_to_use ->startActivity(
+                Intent(
+                    this,
+                    HowToUseActivity::class.java
+                )
+            )
+
         }
 
         return true
