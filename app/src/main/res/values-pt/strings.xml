@@ -2,78 +2,70 @@
     <string name="app_name">Contraster</string>
     <string name="label_lorem_ipsum_dolor_sit_amet">Lorem ipsum dolor sit amet</string>
     <string name="label_background">Background</string>
-    <string name="label_text">Text</string>
-    <string name="label_brightness">Brightness</string>
-    <string name="label_hue">Hue</string>
-    <string name="label_saturation">Saturation</string>
+    <string name="label_text">Texto</string>
+    <string name="label_brightness">Claridade</string>
+    <string name="label_hue">Tonalidade</string>
+    <string name="label_saturation">Saturação</string>
     <string name="hint_hex_color">Hex color</string>
-    <string name="cd_confirm_hex_value">Confirm HEX value</string>
-    <string name="label_hex_rule_1">- Use the 6-digit format preceded by \"# \". </string>
-    <string name="label_hex_rule_2">- Do not use hexadecimal values with opacity.</string>
-    <string name="label_hex_rule3">- There may be a change in the HEX code, but contrast ratios remain accurate.</string>
-    <string name="error_hex_value">Invalid hex coed</string>
-    <string name="error_invalid_color">This is not a valid color</string>
+    <string name="cd_confirm_hex_value">Confirmar valor HEX</string>
+    <string name="label_hex_rule_1">- Use o formato de 6 dígitos precedidos por \"#\".</string>
+    <string name="label_hex_rule_2">- Não use valores hexadecimais com opacidade.</string>
+    <string name="label_hex_rule3">- Pode haver alteração no código HEX, mas as taxas de contraste permanecem precisas.</string>
+    <string name="error_hex_value">Código hex inválido</string>
+    <string name="error_invalid_color">Essa não é uma cor válida</string>
     <string name="label_lorem_ipsum_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="label_ratio_calculation">Ratio calculation</string>
     <string name="label_background_color">%1$s</string>
     <string name="label_text_color">%1$s</string>
 
     <string name="label_palette_name">%1$s (%2$s)</string>
-    <string name="label_add_name">Add name</string>
+    <string name="label_add_name">Adicionar nome</string>
     <string name="hint_palette_name">Palette</string>
 
-    <string name="snackBar_palette_saved">Palette saved</string>
-    <string name="label_delete">Delete</string>
-    <string name="label_cancel">Cancel</string>
-    <string name="label_wish_to_delete_palette">Do you really want to delete this palette? This action cannot be undone.</string>
-    <string name="snackBar_palette_deleted">Palette deleted</string>
-    <string name="label_no_palettes">No palette saved. Save your palettes by clicking \" + \" on the previous page.</string>
-    <string name="label_save">Save</string>
 
-    <string name="menu_label_about_us">About us</string>
-    <string name="menu_label_see_palettes">See palettes</string>
+    <string name="snackBar_palette_saved">Paleta salva</string>
+    <string name="label_delete">Deletar</string>
+    <string name="label_cancel">Cancelar</string>
+    <string name="label_wish_to_delete_palette">Deseja realmente deletar esta paleta? Essa ação não poderá ser desfeita.</string>
+    <string name="snackBar_palette_deleted">Paleta deletada</string>
+    <string name="label_no_palettes">Nenhuma paleta salva. Salve suas paletas clicando no \" + \" na página anterior.</string>
+    <string name="label_save">Salvar</string>
 
-    <string name="label_about_us_message">We appreciate ,and know, the importance of interacting with users, so we want (and encourage) you to feel free to contact us to suggest improvements, give ideas, or report bugs. It\'s a pleasure to have you here!</string>
+    <string name="menu_label_about_us">Sobre nós</string>
+    <string name="menu_label_see_palettes">Ver paletas</string>
+    <string name="label_about_us_message">Apreciamos e sabemos a importância da interação com os usuários, por isso, queremos (e incentivamos) que você fique à vontade para entrar em contato conosco para sugerir melhorias, dar ideias, ou relatar bugs. É um prazer ter você aqui!</string>
 
-    <string name="label_privacy_policy">Privacy policy</string>
-    <string name="label_rate_our_app">Rate our app</string>
-    <string name="label_contact_us">Contact us</string>
-
-    <string name="toast_could_not_do_it">We could not complete the action</string>
-
-
-    <string name="cd_back_button">Back</string>
-    <string name="cd_app_logo">Application logo</string>
-    <string name="cd_save_palette">Save palette</string>
-    <string name="cd_more">More</string>
-    <string name="cd_no_palettes">No saved palettes</string>
-    <string name="cd_trash">Trash image</string>
-    <string name="cd_delete">Delete palette</string>
-    <string name="cd_edit_palette">Edit palette</string>
-
-    <string name="label_test_palette">Test palette</string>
+    <string name="label_privacy_policy">Política de privacidade</string>
+    <string name="label_rate_our_app">Avalie nosso aplicativo</string>
+    <string name="label_contact_us">Entre em contato</string>
+    <string name="toast_could_not_do_it">Não conseguimos completar a ação</string>
 
 
-
-
+    <string name="cd_back_button">Voltar</string>
+    <string name="cd_app_logo">Logo do aplicativo</string>
+    <string name="cd_save_palette">Salvar paleta</string>
+    <string name="cd_more">Mais</string>
+    <string name="cd_no_palettes">Não há paletas salvas</string>
+    <string name="cd_trash">Imagem de lixeira</string>
+    <string name="cd_delete">Deletar paleta</string>
+    <string name="cd_edit_palette">Editar paleta</string>
+    <string name="label_test_palette">Testar paleta</string>
 
     <string name="label_company_name">Simple Plus Apps</string>
-    <string name="title_dialog_real_use">Test on:</string>
+    <string name="title_dialog_real_use">Testar em:</string>
 
     <!-- Strings for article real use layout-->
-    <string name="label_article">Article</string>
+    <string name="label_article">Artigo</string>
     <string name="label_lorem_ipsum">Lorem ipsum</string>
     <string name="label_simple_plus">Simple Plus</string>
-    <string name="label_article_reed_time">apr 16 | 5 min read</string>
+    <string name="label_article_reed_time">abr 16 | leitura de 5 min</string>
     <string name="label_lorem_ipsum_article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</string>
 
 
     <!--Strings for music playe real use layout-->
     <string name="label_music_player">Music player</string>
-    <string name="label_my_musics">My music</string>
-    <string name="cd_image_mock">Visualization image</string>
-
-
+    <string name="label_my_musics">Minhas músicas</string>
+    <string name="cd_image_mock">Imagem de visualização</string>
 
 
     <!-- Strings for Instagram real use layout-->
@@ -89,8 +81,10 @@
     <string name="label_instagram_add_comment">Adicionar comentario</string>
     <string name="label_instagram_time_ago">Há 1 dia</string>
     <string name="label_instagram_post">Postagem de instagram</string>
+    <string name="cd_switch_colors">Inverter cores</string>
+    <string name="toast_click_to_close">Clique de novo para sair</string>
+    <string name="menu_label_how_to_use">Como usar</string>
+    <string name="label_contrast_guide">Manual de contraste</string>
 
-    <string name="cd_switch_colors">Switch colors</string>
-    <string name="toast_click_to_close">Press again to exit</string>
-
+    <string name="cd_image_contrast_guide">Imagem de guia de contraste</string>
 </resources>

@@ -1,0 +1,25 @@
+<p>This short article will help you understand how to use contrast ratios to create more accessible palettes for your designs while meeting WCAG 2.0 accessibility standards. There are 4 categories to pay attention to, derived from a score ranging from 0 to 21:</p>
+
+<ul>
+<li>Fail (< 3.0)</li>
+<li>AA+ (3.0 - 4.49)</li>
+<li>AA (4.5 - 6.9)</li>
+<li>AAA (7.0 - 21.0)</li>
+</ul>
+
+<p>Note that the higher the number obtained, the greater the contrast between your colors. Take into account a black background with white text, this is the highest possible contrast, so it would have a score of 21.0. Conversely, if we used a light gray tone on a white background, we would get a score close to 0 due to the low contrast between these colors.</p>
+
+<p><small>*These categories are reached through calculations made with the relative luminescence of the background and foreground colors.</small></p>
+
+<h6>Fail</h6>
+<p>It means that the score was less than 3.0, there is not enough contrast between your colors.</p>
+
+<h6>AA+</h6>
+<p>It means that your colors got a score between 3.0 and 4.49, this is the minimum contrast recommended for texts larger than 18pt.</p>
+
+<h6>AA</h6>
+<p>Your colors achieved a score between 4.5 and 6.9. In this score, ensuring a good contrast for people with visual acuity of 20/40 (some degree of visual impairment) and for people with unaltered vision.<br/>This is considered the best score for texts smaller than 18pt.</p>
+
+<h6>AAA</h6>
+<p>Your colors achieved a score of at least 7.0. Best used in articles with a long reading period.</p>
+
