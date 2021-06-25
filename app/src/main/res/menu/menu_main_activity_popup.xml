@@ -2,10 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="@string/menu_label_about_us"
-        android:id="@+id/menu_main_activity_popup_about"/>
-
-    <item
         android:title="@string/menu_label_see_palettes"
         android:id="@+id/menu_main_activity_popup_see_palettes"/>
 
@@ -13,5 +9,8 @@
         android:title="@string/menu_label_how_to_use"
         android:id="@+id/menu_main_activity_popup_how_to_use"/>
 
+    <item
+        android:title="@string/menu_label_about_us"
+        android:id="@+id/menu_main_activity_popup_about"/>
 
 </menu>

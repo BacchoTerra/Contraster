@@ -3,21 +3,18 @@ package com.simpleplus.contraster.activities
 import android.content.res.ColorStateList
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
-import android.graphics.ColorFilter
 import android.graphics.PorterDuff
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.adapter.InstagramAdapter
 import com.simpleplus.contraster.adapter.MusicAdapter
-import com.simpleplus.contraster.databinding.ActivityRealUseBinding
-import com.simpleplus.contraster.databinding.ContentRealUseArticleBinding
-import com.simpleplus.contraster.databinding.ContentRealUseInstagramPostsBinding
-import com.simpleplus.contraster.databinding.ContentRealUseMusicPlayerBinding
+import com.simpleplus.contraster.databinding.*
 
 class RealUseActivity : AppCompatActivity() {
 
@@ -36,6 +33,10 @@ class RealUseActivity : AppCompatActivity() {
 
     private val musicBinder by lazy {
         ContentRealUseMusicPlayerBinding.inflate(layoutInflater)
+    }
+
+    private val article2Binder by lazy {
+        ContentRealUseArticle2Binding.inflate(layoutInflater)
     }
 
     //Colors
@@ -82,6 +83,7 @@ class RealUseActivity : AppCompatActivity() {
         when (intent.extras?.getString(MainActivity.DIALOG_REAL_USE_LAYOUT_KEY)) {
 
             MainActivity.IDENTIFIER_ARTICLE_LAYOUT -> displayArticleLayout()
+            MainActivity.IDENTIFIER_ARTICLE_2_LAYOUT -> displayArticleLayout2()
             MainActivity.IDENTIFIER_MUSIC_LAYOUT -> displayMusicLayout()
         }
     }
@@ -140,6 +142,19 @@ class RealUseActivity : AppCompatActivity() {
             ColorStateList.valueOf(bk)
         )
 
+
+    }
+
+    private fun displayArticleLayout2() {
+        binder.activityRealUseViewParentContainer.addView(article2Binder.root)
+        article2Binder.contentRealUse2TxtHeader.setHtml(R.raw.real_use_article_2_part_1)
+        article2Binder.contentRealUse2TxtArticle.setHtml(R.raw.real_use_article_2_part_2)
+        Glide.with(this).load(R.drawable.instagram_post_pic_2).into(article2Binder.contentRealUse2ImageImage)
+
+        article2Binder.contentRealUse2TxtArticle.setTextColor(fg)
+        article2Binder.contentRealUse2TxtHeader.setTextColor(fg)
+        article2Binder.contentRealUse2TxtHeader.typeface = ResourcesCompat.getFont(this,R.font.playfair_display)
+        article2Binder.contentRealUse2TxtArticle.typeface = ResourcesCompat.getFont(this,R.font.playfair_display)
 
     }
 

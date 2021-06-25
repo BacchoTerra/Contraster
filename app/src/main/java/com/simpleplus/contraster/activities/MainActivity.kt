@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         const val DIALOG_REAL_USE_FOREGROUND_KEY = "com.simpleplus.contraster.DIALOG_FOREGROUND_KEY"
 
         const val IDENTIFIER_ARTICLE_LAYOUT = "article_layout"
+        const val IDENTIFIER_ARTICLE_2_LAYOUT = "article_2_layout"
         const val IDENTIFIER_INSTAGRAM_LAYOUT = "instagram_layout"
         const val IDENTIFIER_MUSIC_LAYOUT = "music_layout"
     }
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     private lateinit var pickersUtil: PickersUtil
     private var ratioLabel = "AA"
     private val realUseArray by lazy {
-        arrayOf(getString(R.string.label_article), getString(R.string.label_music_player))
+        arrayOf(getString(R.string.label_article), getString(R.string.label_article_2),getString(R.string.label_music_player))
     }
 
     //String components
@@ -112,7 +113,8 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
                 when (which) {
                     0 -> initRealUseActivity(IDENTIFIER_ARTICLE_LAYOUT)
-                    1 -> initRealUseActivity(IDENTIFIER_MUSIC_LAYOUT)
+                    1 -> initRealUseActivity(IDENTIFIER_ARTICLE_2_LAYOUT)
+                    2 -> initRealUseActivity(IDENTIFIER_MUSIC_LAYOUT)
                 }
 
             }

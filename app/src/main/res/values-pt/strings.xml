@@ -42,7 +42,7 @@
 
 
     <string name="cd_back_button">Voltar</string>
-    <string name="cd_app_logo">Logo do aplicativo</string>
+    <string name="cd_app_logo">Logomarca</string>
     <string name="cd_save_palette">Salvar paleta</string>
     <string name="cd_more">Mais</string>
     <string name="cd_no_palettes">Não há paletas salvas</string>
@@ -87,4 +87,8 @@
     <string name="label_contrast_guide">Manual de contraste</string>
 
     <string name="cd_image_contrast_guide">Imagem de guia de contraste</string>
+
+    <string name="label_article_2">Artigo 2</string>
+
+    <string name="label_send_email">Selecione uma opção de e-mail</string>
 </resources>

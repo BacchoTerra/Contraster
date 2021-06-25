@@ -58,8 +58,11 @@ class AboutActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun sendEmail() {
+
+        Toast.makeText(this,R.string.label_send_email,Toast.LENGTH_LONG).show()
+
         val emailIntent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
+            type = "message/rfc822"
             putExtra(Intent.EXTRA_EMAIL, arrayOf("simpleplus.dev@gmail.com"))
         }
 

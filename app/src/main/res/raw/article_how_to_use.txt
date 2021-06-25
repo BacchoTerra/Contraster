@@ -18,7 +18,7 @@
 <p>It means that your colors got a score between 3.0 and 4.49, this is the minimum contrast recommended for texts larger than 18pt.</p>
 
 <h6>AA</h6>
-<p>Your colors achieved a score between 4.5 and 6.9. In this score, ensuring a good contrast for people with visual acuity of 20/40 (some degree of visual impairment) and for people with unaltered vision.<br/>This is considered the best score for texts smaller than 18pt.</p>
+<p>Your colors achieved a score between 4.5 and 6.9. In this score, you are ensuring a good contrast for people with visual acuity of 20/40 (some degree of visual impairment) and for people with unaltered vision.<br/>This is considered the best score for texts smaller than 18pt.</p>
 
 <h6>AAA</h6>
 <p>Your colors achieved a score of at least 7.0. Best used in articles with a long reading period.</p>
