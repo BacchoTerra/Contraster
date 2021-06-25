@@ -10,8 +10,10 @@ import android.os.Looper
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowManager
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -102,6 +104,10 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
         binder.activityMainTxtInformation.setOnClickListener(this)
         binder.activityMainImageSwitch.setOnClickListener(this)
 
+        window.apply {
+            setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        }
+
 
     }
 
@@ -174,7 +180,7 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
 
     private fun showPopUpMenu() {
 
-        val popupMenu = PopupMenu(this, binder.activityMainImageMenu)
+        val popupMenu = PopupMenu(this, binder.activityMainImageMenu,Gravity.RIGHT)
 
         popupMenu.menuInflater.inflate(R.menu.menu_main_activity_popup, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener(this)
