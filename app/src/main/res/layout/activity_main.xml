@@ -249,8 +249,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activity_main_saturationPicker" />
 
-            <!-- TODO: retornar ad normal-->
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
