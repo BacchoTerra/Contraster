@@ -34,8 +34,8 @@ class MusicAdapter(private val bk: Int,private val fg: Int) : RecyclerView.Adapt
 
     private fun bindText(holder: MyRecyclerView,musicModel: MusicModel) {
 
-        holder.binder.rowMusicsTxtMusicName.setText(musicModel.musicName)
-        holder.binder.rowMusicsTxtMusicArtist.setText(musicModel.musicAuthor)
+        holder.binder.rowMusicsTxtMusicName.text = musicModel.musicName
+        holder.binder.rowMusicsTxtMusicArtist.text = musicModel.musicAuthor
 
     }
 

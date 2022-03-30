@@ -37,17 +37,5 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         app:layout_constraintTop_toBottomOf="@+id/activity_real_use_appBarLayout"/>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/activity_real_use_adBanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        ads:adSize="BANNER"
-        ads:layout_anchor="@id/activity_real_use_viewParentContainer"
-        ads:layout_anchorGravity="bottom|center"
-        ads:adUnitId="ca-app-pub-8194589944395897/4142880988">
-    </com.google.android.gms.ads.AdView>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

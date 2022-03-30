@@ -22,20 +22,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 import androidx.core.widget.ImageViewCompat
-import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.ads.AdRequest
 import com.google.android.material.snackbar.Snackbar
-import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.R
-
+import com.simpleplus.contraster.application.ContrasterApplication
 import com.simpleplus.contraster.databinding.ActivityMainBinding
 import com.simpleplus.contraster.databinding.DialogSavePaletteBinding
 import com.simpleplus.contraster.fragments.SetValueBottomSheet
 import com.simpleplus.contraster.model.MyPalette
 import com.simpleplus.contraster.util.PickersUtil
 import com.simpleplus.contraster.viewmodel.MyPaletteViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     SetValueBottomSheet.OnColorValueSetListener, PopupMenu.OnMenuItemClickListener,
@@ -93,7 +88,6 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binder.root)
-        initAd()
         pickersUtil = PickersUtil(binder, this, this)
         calculateContrastRatio(pickersUtil.selectedBackgroundColor, pickersUtil.selectedForegroundColor)
 
@@ -135,14 +129,6 @@ class MainActivity : AppCompatActivity(), PickersUtil.OnPickerChangeListener,
             it.putExtra(DIALOG_REAL_USE_BACKGROUND_KEY, pickersUtil.selectedBackgroundColor)
             it.putExtra(DIALOG_REAL_USE_FOREGROUND_KEY, pickersUtil.selectedForegroundColor)
         })
-    }
-
-    private fun initAd() {
-
-        lifecycleScope.launch(Dispatchers.Main) {
-            val adRequest = AdRequest.Builder().build()
-            binder.adView.loadAd(adRequest)
-        }
     }
 
     private fun showPaletteSavingDialog() {

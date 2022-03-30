@@ -1,6 +1,5 @@
 package com.simpleplus.contraster.adapter
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.graphics.Color
