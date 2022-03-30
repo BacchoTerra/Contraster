@@ -1,13 +1,10 @@
 package com.simpleplus.contraster.util
 
 import android.content.Context
-import android.graphics.Color
-import android.util.Log
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.get
 import codes.side.andcolorpicker.converter.setFromColorInt
 import codes.side.andcolorpicker.converter.toColorInt
-import codes.side.andcolorpicker.converter.toPureHueColorInt
 import codes.side.andcolorpicker.group.PickerGroup
 import codes.side.andcolorpicker.group.registerPickers
 import codes.side.andcolorpicker.hsl.HSLColorPickerSeekBar
@@ -16,7 +13,6 @@ import codes.side.andcolorpicker.view.picker.ColorSeekBar
 import com.google.android.material.button.MaterialButton
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.databinding.ActivityMainBinding
-import com.simpleplus.contraster.fragments.SetValueBottomSheet
 
 class PickersUtil(
    private  val activityMainBinding: ActivityMainBinding,

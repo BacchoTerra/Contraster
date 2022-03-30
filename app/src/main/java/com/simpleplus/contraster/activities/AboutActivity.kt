@@ -1,17 +1,12 @@
 package com.simpleplus.contraster.activities
 
 import android.content.ActivityNotFoundException
-import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.webkit.MimeTypeMap
 import android.widget.Toast
-import androidx.core.content.MimeTypeFilter
-import com.google.android.gms.common.util.HttpUtils
+import androidx.appcompat.app.AppCompatActivity
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.databinding.ActivityAboutBinding
 

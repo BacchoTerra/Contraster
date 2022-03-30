@@ -54,9 +54,6 @@ dependencies {
     //https://github.com/side-codes/andColorPicker
     implementation "codes.side:andcolorpicker:0.6.2"
 
-    //https://developers.google.com/admob/android/quick-start
-    implementation 'com.google.android.gms:play-services-ads:20.2.0'
-
     //Room and viewModel
     def lifecycle_version = "2.3.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"

@@ -4,13 +4,12 @@ import android.content.res.ColorStateList
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
 import android.graphics.PorterDuff
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.AdRequest
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.adapter.InstagramAdapter
 import com.simpleplus.contraster.adapter.MusicAdapter
@@ -50,13 +49,6 @@ class RealUseActivity : AppCompatActivity() {
         initToolbar()
         displayRightLayout()
 
-        initAds()
-
-    }
-
-    private fun initAds() {
-        val adRequest = AdRequest.Builder().build()
-        binder.activityRealUseAdBanner.loadAd(adRequest)
     }
 
     private fun initToolbar() {

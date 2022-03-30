@@ -3,9 +3,7 @@ package com.simpleplus.contraster.adapter
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.simpleplus.contraster.databinding.RowInstagramPost1Binding
 import com.simpleplus.contraster.databinding.RowInstagramPost2Binding
 import com.simpleplus.contraster.databinding.RowInstagramPost3Binding

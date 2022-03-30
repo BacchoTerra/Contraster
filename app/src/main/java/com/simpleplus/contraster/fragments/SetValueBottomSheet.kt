@@ -11,7 +11,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.simpleplus.contraster.R
 import com.simpleplus.contraster.activities.MainActivity
 import com.simpleplus.contraster.databinding.BottomSheetSetValueBinding
-import java.lang.Exception
 import java.util.regex.Pattern
 
 class SetValueBottomSheet (private var listener : OnColorValueSetListener ): BottomSheetDialogFragment() {
